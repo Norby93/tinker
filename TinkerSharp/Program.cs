@@ -18,11 +18,11 @@ namespace TinkerSharp
         private static Hero me;
         private static Hero target;
         private static Key toggleKey = Key.J;
-        private static Key activeKey = Key.Space;
+        private static Key activeKey = Key.D3;
         private static Key blinkToggleKey = Key.P;
         private static bool toggle = true;
         private static bool active;
-        private static bool blinkToggle = true;
+        private static bool blinkToggle = false;
         private static int maximumDistance = 1500;
         private static Font _text;
 
@@ -164,7 +164,7 @@ namespace TinkerSharp
 
                     else if (Refresh != null && Refresh.CanBeCasted() && me.Mana > 200 && Utils.SleepCheck("refresh") && !Refresh.IsChanneling && nothingCanCast())
                     {
-                        Refresh.UseAbility();
+                       //s Refresh.UseAbility();
                         Utils.ChainStun(me, (Refresh.ChannelTime * 1000) + Game.Ping + 400, null, false);
                         Utils.Sleep(700 + Game.Ping, "refresh");
                     }
